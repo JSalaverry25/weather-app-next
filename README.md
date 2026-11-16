@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌤️ Weather App
 
-## Getting Started
+A responsive weather application built with **Next.js**, **React**, and **Tailwind CSS**. It allows users to search for a city and retrieve its current weather conditions using the OpenWeatherMap API.
 
-First, run the development server:
+## ✨ Features
+
+- Search for weather conditions by city name.
+- Display current temperature in Celsius.
+- Show humidity and weather descriptions.
+- Display weather icons.
+- Loading and error states.
+- Responsive user interface.
+- Server-side API integration to keep the API key private.
+
+## 🛠️ Technologies
+
+- **Next.js 16** – React framework using the App Router.
+- **React** – User interface.
+- **Tailwind CSS** – Styling and responsive design.
+- **JavaScript** – Application logic.
+- **OpenWeatherMap API** – Weather and geocoding data.
+- **Vitest** – Automated testing.
+
+## 🏗️ Architecture
+
+The application uses a Next.js API Route as an intermediary between the frontend and OpenWeatherMap.
+
+```text
+User
+  |
+  v
+Next.js Frontend
+  |
+  v
+/api/weather
+  |
+  v
+OpenWeatherMap API
+  |
+  +-- Geocoding API
+  |
+  +-- Current Weather API
+  |
+  v
+Weather information
+  |
+  v
+Frontend display
+```
+
+The API key is stored on the server and is never exposed directly to the browser.
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- An OpenWeatherMap API key
+
+### 1. Clone the repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd weather-app
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Configure environment variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+OPENWEATHER_API_KEY=your_api_key_here
+```
+
+Replace `your_api_key_here` with your OpenWeatherMap API key.
+
+**Important:** Never commit `.env.local` or expose your API key in the frontend.
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🧪 Testing
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the automated tests with:
 
-## Learn More
+```bash
+npm run test:run
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run tests with coverage:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run test:coverage
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Weather Data Provider
 
-## Deploy on Vercel
+This project uses [OpenWeatherMap](https://openweathermap.org/api) for:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Geocoding API – Converts city names into geographic coordinates.
+- Current Weather API – Retrieves current weather information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📚 Useful Resources
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [OpenWeatherMap API](https://openweathermap.org/api)
+- [Vitest Documentation](https://vitest.dev/)
+
+## 👨‍💻 Author
+
+Developed as a personal project to practice modern frontend development, API integration, server-side logic, and automated testing.
